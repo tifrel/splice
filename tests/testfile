@@ -1,0 +1,10 @@
+this is line 1 (pre-exon)
+this is line 2 (pre-exon)
+# spliceSTART intron1
+line inside intron1
+# spliceSTOP intron1
+this is line 6 (inter-exon)
+# spliceSTART intron2 and gibberish
+line inside intron2
+# spliceSTOP intron2
+this is line 10 (post-exon)
