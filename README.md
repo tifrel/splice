@@ -39,35 +39,35 @@ Testing is done based on the API stated below
 
 ### Roadmap
 #### High priority
-- [] error handling
-    - [] -q flag
+- [ ] error handling
+    - [ ] -q flag
     - [x] using exit codes
-- [] `cat <filename> | splice <text>`  -> prints file, but with `<text>`
+- [ ] `cat <filename> | splice <text>`  -> prints file, but with `<text>`
     inserted for intron
-    - [] cannot be combined with -i/-e flag
-    - [] fails if the intron is not unique
-    - [] `--substitute`
-- [] `splice <filename> <name> -c <control>`  -> selects introns only when
+    - [ ] cannot be combined with -i/-e flag
+    - [ ] fails if the intron is not unique
+    - [ ] `--substitute`
+- [ ] `splice <filename> <name> -c <control>`  -> selects introns only when
     somewhere inside the intron `<control>` is matched
-    - [] `--control`
+    - [ ] `--control`
 #### Medium priority
-- [] proper documentation
-- [] get introns from multiple files, new usage options:
-    - [] `splice <name> <filename> ...`
+- [ ] proper documentation
+- [ ] get introns from multiple files, new usage options:
+    - [ ] `splice <name> <filename> ...`
         - this could work with the m flag, but needs a bit of rewrite
-- [] `splice <filename> -s <start>:<stop>`  -> splice between line that matches
+- [ ] `splice <filename> -s <start>:<stop>`  -> splice between line that matches
     `<start>` and line that matches `<stop>`
-    - [] compatible with -e flag
-    - [] can be used multiple times
-    - [] `--selector`
-- [] regex support
+    - [ ] compatible with -e flag
+    - [ ] can be used multiple times
+    - [ ] `--selector`
+- [ ] regex support
 #### Low priority
-- [] read a config file that associates file extensions with standard matching
+- [ ] read a config file that associates file extensions with standard matching
     sequences, e.g. `/* -------- spliceSTART <name> -------- */` for .c and
     .h files
-- [] allow for multiple introns
-- [] allow for multiple introns with multiple susbstitutions
-- [] does clap respect the `--` and `-` conventions?
+- [ ] allow for multiple introns
+- [ ] allow for multiple introns with multiple susbstitutions
+- [ ] does clap respect the `--` and `-` conventions?
 
 
 ## License
