@@ -84,7 +84,7 @@ impl Config {
     // for multiple output files, this should be in a tmpdir
     pub fn get_writer(&mut self) -> io::Result<WriterBox> {
         let mybox: WriterBox;
-        if self.outfile.is_some() {
+        if self.mutate {
             // simply assume that user doesn't try to splice root
             self.outfile = Some(PathBuf::from(format!(
                 "{}.splice",
@@ -102,6 +102,18 @@ impl Config {
         if self.mutate {
             remove_file(&self.filename)?;
             rename(self.outfile.as_ref().unwrap(), &self.filename)?;
+            /* TODO: this causes a failure:
+             * thread 'main' panicked at 'called `Option::unwrap()` on a
+             * `None` value', src/cfg.rs:104:20
+             *  note: run with `RUST_BACKTRACE=1` environment variable to
+             * display a backtrace
+             *
+             * - called with -mi
+             * - reproducible
+             * - TODO: add test for failure case
+             * - writes file contents to stdout
+             * NOWF FIXED, cause: if self.outfile.is_some would always be false
+             */
         }
         Ok(())
     }
